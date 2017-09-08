@@ -11,6 +11,7 @@ export class ImageSearchComponent implements OnInit {
   images: any [];
   ngOnInit() {}
   imagesFound: boolean = false;
+  searching: boolean = false;
 
   handkeSuccess(data){
     console.log(data.hits)
@@ -25,10 +26,11 @@ export class ImageSearchComponent implements OnInit {
   constructor(private imageService: imageService) { }
   
   searchImage(query: string){
+    this.searching = true;
     return this.imageService.getImage(query).subscribe(
       data => this.handkeSuccess(data),
       error => this.handleError(error),
-      () => console.log("Request Completed"),
+      () => this.searching = false,
     );
   }
   
