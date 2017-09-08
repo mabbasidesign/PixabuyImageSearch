@@ -8,15 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageSearchComponent implements OnInit {
 
-  image: any [];
+  images: any [];
   ngOnInit() {}
+  imagesFound: boolean = false;
+
+  handkeSuccess(data){
+    console.log(data.hits)
+    this.images = data.hits
+    this.imagesFound = true;
+  }
+  
+  handleError(error){
+    console.log(error);
+  }
   
   constructor(private imageService: imageService) { }
   
   searchImage(query: string){
     return this.imageService.getImage(query).subscribe(
-      data => console.log(data),
-      error => console.log(error),
+      data => this.handkeSuccess(data),
+      error => this.handleError(error),
       () => console.log("Request Completed"),
     );
   }
