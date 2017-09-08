@@ -6,7 +6,7 @@ search-container{
   height: 70px;
   max-height: 70px;
   font-size: 3.5em;
-  color: #B13636;
+  color: #1A8108;
 }
 
 .avatar{
@@ -14,7 +14,7 @@ search-container{
 }
 
 .searchButton{
-  background-color: #CA1740;
+  background-color: #0F855D;
   color: #fff;
   margin-top:20px;
 }
@@ -25,11 +25,16 @@ search-container{
   max-width: 300px;
   margin: 8px;
   border-radius: 2px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 4px 0 rgba(10, 188, 132, 0.14);
   overflow: hidden;
 }
 
 .results{
   padding: 8px;
   margin-bottom: 12px;
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 45%;
 }
