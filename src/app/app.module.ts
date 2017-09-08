@@ -1,16 +1,19 @@
+import { imageService } from './shared/image.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ImageSearchComponent } from './image-search/image-search.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ImageSearchComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [imageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
